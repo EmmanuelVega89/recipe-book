@@ -29,7 +29,7 @@ El sistema SHALL mostrar las recetas filtradas en un grid responsive de cards. E
 - **THEN** se muestra un mensaje diferenciado indicando que no se encontraron recetas con los filtros actuales
 
 ### Requirement: Recipe card content
-Cada recipe card SHALL mostrar: imagen de la receta, nombre, categoría, nivel de dificultad y tiempo de preparación. La card MUST ser un componente presentacional que reciba un objeto Recipe como prop.
+Cada recipe card SHALL mostrar: imagen de la receta, nombre, categoría, nivel de dificultad y tiempo de preparación. La card MUST ser un componente presentacional que reciba un objeto Recipe como prop. La card MUST ser clickeable y navegar a la ruta `/recipes/:id` de la receta correspondiente.
 
 #### Scenario: Card muestra toda la información requerida
 - **WHEN** se renderiza una RecipeCard con un objeto Recipe válido
@@ -38,6 +38,10 @@ Cada recipe card SHALL mostrar: imagen de la receta, nombre, categoría, nivel d
 #### Scenario: Imagen de la receta
 - **WHEN** la card renderiza la imagen
 - **THEN** la imagen MUST tener un atributo alt con el nombre de la receta y MUST mostrarse con aspect ratio consistente
+
+#### Scenario: Navegación al detalle desde la card
+- **WHEN** el usuario hace clic en una RecipeCard
+- **THEN** la aplicación navega a `/recipes/:id` donde `:id` es el ID de la receta
 
 ### Requirement: Recipe type definition
 El sistema SHALL definir una interface TypeScript `Recipe` que refleje la estructura de datos de la API. El tipo MUST ser exportado desde el feature module para uso en otros componentes.
