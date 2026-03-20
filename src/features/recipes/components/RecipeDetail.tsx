@@ -1,6 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { useGetRecipeByIdQuery } from "../api/recipesApi";
 
+function buildWhatsAppUrl(name: string, category: string): string {
+  const message = `¡Mira esta receta! 🍽️ *${name}* | Categoría: ${category} ${window.location.href}`;
+  return `https://wa.me/?text=${encodeURIComponent(message)}`;
+}
+
 export function RecipeDetail() {
   const { id } = useParams<{ id: string }>();
   const { data: recipe, isLoading, isError } = useGetRecipeByIdQuery(Number(id));
@@ -26,9 +31,19 @@ export function RecipeDetail() {
 
   return (
     <div>
-      <Link to="/" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium mb-6">
-        &larr; Volver al listado
-      </Link>
+      <div className="flex items-center justify-between mb-6">
+        <Link to="/" className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium">
+          &larr; Volver al listado
+        </Link>
+        <a
+          href={buildWhatsAppUrl(recipe.name, recipe.category)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600"
+        >
+          Compartir por WhatsApp
+        </a>
+      </div>
 
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <img

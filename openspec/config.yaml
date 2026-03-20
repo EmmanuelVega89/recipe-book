@@ -1,4 +1,6 @@
-schema: spec-driven
+# schema: spec-driven
+# openspec/config.yaml
+schema: team-workflow
 
 context: |
   Proyecto: Recipe Book (Libro de Recetas)
