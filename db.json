@@ -261,12 +261,54 @@
       "difficulty": "Fácil",
       "prepTime": 20,
       "imageUrl": "https://placehold.co/400x300?text=Huevos+Rancheros"
+    },
+    {
+      "name": "Cafe mono",
+      "description": "una cafe muy cargado",
+      "ingredients": [
+        "3"
+      ],
+      "steps": [
+        "P1"
+      ],
+      "category": "Desayuno",
+      "difficulty": "Media",
+      "prepTime": 15,
+      "imageUrl": "https://comohacercafe.com/wp-content/uploads/2020/03/espresso.jpeg",
+      "id": 11
+    },
+    {
+      "name": "dtryjfytfhd",
+      "description": "htygytyhftg",
+      "ingredients": [
+        "3"
+      ],
+      "steps": [
+        "Paso 1"
+      ],
+      "category": "Plato Fuerte",
+      "difficulty": "Media",
+      "prepTime": 664,
+      "imageUrl": "https://sit.imberacooling.com/portal/fersa/mx",
+      "id": 12
     }
   ],
   "categories": [
-    { "id": 1, "name": "Desayuno" },
-    { "id": 2, "name": "Plato Fuerte" },
-    { "id": 3, "name": "Postre" },
-    { "id": 4, "name": "Snack" }
+    {
+      "id": 1,
+      "name": "Desayuno"
+    },
+    {
+      "id": 2,
+      "name": "Plato Fuerte"
+    },
+    {
+      "id": 3,
+      "name": "Postre"
+    },
+    {
+      "id": 4,
+      "name": "Snack"
+    }
   ]
 }

@@ -14,7 +14,19 @@ export const recipesApi = createApi({
     getCategories: builder.query<Category[], void>({
       query: () => "/categories",
     }),
+    createRecipe: builder.mutation<Recipe, Omit<Recipe, "id">>({
+      query: (recipe) => ({
+        url: "/recipes",
+        method: "POST",
+        body: recipe,
+      }),
+    }),
   }),
 });
 
-export const { useGetRecipesQuery, useGetRecipeByIdQuery, useGetCategoriesQuery } = recipesApi;
+export const {
+  useGetRecipesQuery,
+  useGetRecipeByIdQuery,
+  useGetCategoriesQuery,
+  useCreateRecipeMutation,
+} = recipesApi;

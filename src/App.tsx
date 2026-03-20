@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecipeList } from "./features/recipes/components/RecipeList";
 import { RecipeDetail } from "./features/recipes/components/RecipeDetail";
+import { CreateRecipePage } from "./features/recipes/pages/CreateRecipePage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <main className="max-w-6xl mx-auto px-8 py-8">
           <Routes>
             <Route path="/" element={<RecipeList />} />
+            <Route path="/recipes/new" element={<CreateRecipePage />} />
             <Route path="/recipes/:id" element={<RecipeDetail />} />
           </Routes>
         </main>

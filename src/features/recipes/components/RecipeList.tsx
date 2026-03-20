@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { useGetRecipesQuery, useGetCategoriesQuery } from "../api/recipesApi";
 import { RecipeCard } from "./RecipeCard";
 import { RecipeFilters } from "./RecipeFilters";
@@ -51,6 +52,14 @@ export function RecipeList() {
 
   return (
     <div>
+      <div className="flex justify-end mb-4">
+        <Link
+          to="/recipes/new"
+          className="px-4 py-2 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700"
+        >
+          Nueva Receta
+        </Link>
+      </div>
       <RecipeFilters
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
